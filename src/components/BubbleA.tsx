@@ -114,18 +114,24 @@ function DragRotate({ children }: any) {
 export default function BubbleA() {
   return (
     <div className="absolute inset-0">
-      <Canvas shadows camera={{ position: [0, 0, 6] }}>
+      <Canvas
+        shadows
+        camera={{ position: [0, 0, 6] }}
+        gl={{ alpha: true }}
+        style={{ background: "transparent" }}
+      >
+        <pointLight position={[0, 0, 5]} intensity={2} />
         <ambientLight intensity={1.2} />
         <directionalLight position={[5, 5, 5]} intensity={3} castShadow />
         <directionalLight position={[-5, -5, -5]} intensity={2} />
 
-        <Environment preset="studio" />
+        <Environment preset="city" />
 
         <AnimatedText />
 
         {/* GLASS A */}
         <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-          <DragRotate>
+          <DragRotate position={[4, 0, 0]}>
             <Center>
               <Text3D
                 font="https://threejs.org/examples/fonts/helvetiker_bold.typeface.json"
@@ -136,14 +142,11 @@ export default function BubbleA() {
                 A
                 <MeshTransmissionMaterial
                   transmission={1}
-                  thickness={2.5}
+                  thickness={2}
                   roughness={0}
-                  ior={1.6}
-                  chromaticAberration={0.3}
-                  anisotropy={0.3}
-                  distortion={0.15}
-                  distortionScale={0.4}
-                  temporalDistortion={0.25}
+                  ior={1.5}
+                  chromaticAberration={0.05}
+                  backside
                 />
               </Text3D>
             </Center>
