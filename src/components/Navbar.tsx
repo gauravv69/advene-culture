@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <header className="fixed top-6 w-full flex justify-center z-50">
+    <header className="fixed top-6 w-full flex justify-center z-50 opacity-0 animate-fadeInHeader">
       {/* Glow background */}
       <div className="absolute inset-0 flex justify-between px-10 pointer-events-none">
         <div className="w-40 h-40 bg-red-600/40 blur-[120px] rounded-full" />
