@@ -8,6 +8,7 @@ import {
 } from "@react-three/drei";
 import { useRef, useState } from "react";
 
+
 function AnimatedText() {
   const matRef = useRef<any>();
 
@@ -29,7 +30,7 @@ function AnimatedText() {
   });
 
   return (
-    <Center position={[0, 0, -2]}>
+    <Center position={[0, 0.5, -2]}>
       <Text3D
         font="https://threejs.org/examples/fonts/helvetiker_bold.typeface.json"
         size={1.5}
@@ -127,12 +128,13 @@ export default function BubbleA() {
 
         <Environment preset="city" />
 
+
         <AnimatedText />
 
         {/* GLASS A */}
         <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
           <DragRotate position={[4, 0, 0]}>
-            <Center>
+            <Center position={[0, 0.5, 0]}>
               <Text3D
                 font="https://threejs.org/examples/fonts/helvetiker_bold.typeface.json"
                 size={3.2}
@@ -141,12 +143,19 @@ export default function BubbleA() {
               >
                 A
                 <MeshTransmissionMaterial
-                  transmission={1}
-                  thickness={2}
-                  roughness={0}
-                  ior={1.5}
-                  chromaticAberration={0.05}
-                  backside
+                  transmission={1} // full transparency
+                  thickness={3} // thicker glass = better refraction
+                  roughness={0} // crystal clear
+                  ior={1.5} // real glass IOR
+                  chromaticAberration={0.15} // rainbow edges
+                  anisotropy={0.2}
+                  distortion={0.2}
+                  distortionScale={0.3}
+                  temporalDistortion={0.15}
+                  backside // VERY IMPORTANT
+                  backsideThickness={3}
+                  samples={10} // improves quality
+                  resolution={1024} // sharper refraction
                 />
               </Text3D>
             </Center>
