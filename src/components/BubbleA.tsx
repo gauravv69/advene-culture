@@ -8,7 +8,6 @@ import {
 } from "@react-three/drei";
 import { useRef, useState } from "react";
 
-
 function AnimatedText() {
   const matRef = useRef<any>();
 
@@ -120,6 +119,8 @@ export default function BubbleA() {
         camera={{ position: [0, 0, 6] }}
         gl={{ alpha: true }}
         style={{ background: "transparent" }}
+        eventSource={document.body}
+        eventPrefix="client"
       >
         <pointLight position={[0, 0, 5]} intensity={2} />
         <ambientLight intensity={1.2} />
@@ -127,7 +128,6 @@ export default function BubbleA() {
         <directionalLight position={[-5, -5, -5]} intensity={2} />
 
         <Environment preset="city" />
-
 
         <AnimatedText />
 
