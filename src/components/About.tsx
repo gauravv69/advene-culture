@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function About(): JSX.Element {
     return (
         <section id="about" className="py-20 px-6 max-w-4xl mx-auto">

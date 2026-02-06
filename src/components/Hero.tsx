@@ -62,14 +62,16 @@ export default function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <a
-            href="https://www.instagram.com/adveneculture" target="blank"
+            href="https://www.instagram.com/adveneculture"
+            target="blank"
             className="hover:text-white hover:scale-125 transition cursor-pointer"
           >
             <Instagram size={32} />
           </a>
 
           <a
-            href="https://wa.me/9923200206" target="blank"
+            href="https://wa.me/9923200206"
+            target="blank"
             className="hover:text-white hover:scale-125 transition cursor-pointer"
           >
             <MessageCircle size={32} />
@@ -83,6 +85,16 @@ export default function Hero() {
           </a>
         </motion.div>
       </div>
+
+      {/* SCROLL INDICATOR */}
+      <a
+        href="#about"
+        className="absolute bottom-20 left-1/2 -translate-x-1/2 z-10"
+      >
+        <div className="w-7 h-11 border-2 border-white/70 rounded-full flex justify-center">
+          <div className="w-1.5 h-3 bg-white rounded-full mt-2 animate-scroll"></div>
+        </div>
+      </a>
 
       {/* BOTTOM THIN LINE */}
       <div className="absolute bottom-12 left-16 right-16 h-[1px] bg-white/70 z-10" />

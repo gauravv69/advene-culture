@@ -32,10 +32,10 @@ function AnimatedText() {
     <Center position={[0, 0.5, -2]}>
       <Text3D
         font="https://threejs.org/examples/fonts/helvetiker_bold.typeface.json"
-        size={1.5}
+        size={1.2}
         height={0.1}
       >
-        Advene Culture
+        ADVENE CULTURE
         <meshStandardMaterial
           ref={matRef}
           color="white"
