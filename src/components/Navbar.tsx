@@ -12,7 +12,7 @@ export default function Navbar() {
         className="
         relative
         flex items-center justify-between
-        w-[90%] max-w-6xl
+        w-[90%] max-w-8xl mx-auto px-4 py-2
         px-8 py-3
         rounded-full
         bg-white/5
